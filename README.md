@@ -37,14 +37,14 @@ Antes de rodar a aplicação, você precisará instalar as dependências listada
 
 ## Estrutura do Projeto
 
-**app.py**: Arquivo principal que contém as rotas e lógica da aplicação.
-**requirements.txt**: Arquivo contendo as dependências do projeto.
-**templates/**: Diretório onde os arquivos HTML são armazenados.
-**static/**: Diretório onde arquivos estáticos como CSS, JS, e imagens são armazenados.
+- **app.py**: Arquivo principal que contém as rotas e lógica da aplicação.
+- **requirements.txt**: Arquivo contendo as dependências do projeto.
+- **templates/**: Diretório onde os arquivos HTML são armazenados.
+- **static/**: Diretório onde arquivos estáticos como CSS, JS, e imagens são armazenados.
 
 ## Rotas
 
-**GET /**: Página inicial.
-**GET /listar_produtos**: Lista todos os produtos.
-**GET /buscar_produtos**: Busca produtos.
-**POST /adicionar_produto**: Adiciona um novo produto
+- **GET /**: Página inicial.
+- **GET /listar_produtos**: Lista todos os produtos.
+- **GET /buscar_produtos**: Busca produtos.
+- **POST /adicionar_produto**: Adiciona um novo produto
