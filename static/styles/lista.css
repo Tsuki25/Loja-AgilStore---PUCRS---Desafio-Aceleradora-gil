@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1; /* Faz o <main> ocupar todo o espaço disponível */
+    display: flex;
+    align-items: flex-start; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 20px;
+    background-color: lightsteelblue;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listagem {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.listagem table {
+    width: 80vw;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.listagem table th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    background-color: #c2c1c1;
+}
+
+.listagem table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    background-color: #f0f0f0;
+}
+
+.listagem a {
+    text-decoration: none;
+}
+
+.listagem i {
+    font-size: 15px;
+    margin: 5px;
+    opacity: 70%;
+}
+
+.listagem i:hover {
+    opacity: 120%;
+}
+
+button {
+    background-color: darkslateblue;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: cornflowerblue;
+}
+
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px; /* Espaçamento entre os elementos */
+    width: 40vw; /
+}
+
+.search-bar input {
+    flex: 2; /* Aumenta o espaço proporcional do campo de pesquisa */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    flex: none; /* Garante que o botão não cresça além do necessário */
+    white-space: nowrap; /* Evita quebra de texto */
+    padding: 10px 20px; /* Ajusta o espaçamento interno */
+    font-size: 16px;
+}

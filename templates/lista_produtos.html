@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/geral.css">
+    <link rel="stylesheet" href="../static/styles/lista.css">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+
+    <header>
+        <img src="../static/img/Logo-Pucrs.png" alt="logo_pucrs">
+
+        <ul>
+            <li><a href="/"><i class="fa-solid fa-list"></i> Listagem de Produtos</a></li>
+            <li><a href="{{ url_for('cadastrar_produto') }}"><i class="fa-solid fa-square-plus"></i> Cadastro de Produtos</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="listagem">
+            <h2>Listagem de Produtos</h2>
+
+            <div class="search-bar">
+                <form method="GET" action="/buscar_produtos" class="search-bar">
+                    <input type="text" name="query" placeholder="Buscar produtos..." value="{{ request.args.get('query', '') }}">
+                </form>
+                <button onclick="window.location.href='/cadastrar'">Cadastrar Novo Produto <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <table id="tabela-produtos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Quantidade em Estoque</th>
+                        <th>Valor (R$)</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for produto in produtos %}
+                        <tr>
+                            <td>{{ produto.id }}</td>
+                            <td>{{ produto.nome }}</td>
+                            <td>{{ produto.categoria }}</td>
+
+                            <td>{{ produto.qtde }}</td>
+                            <td>{{ produto.valor }}</td>
+
+                            <td>
+                                <a href="{{ url_for('editar_produto', id=produto.id) }}">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black"></i>
+                                </a>
+
+                                <a href="{{ url_for('excluir', id=produto.id) }}">
+                                    <i class="fa-solid fa-trash" style="color:red"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+              {% for category, message in messages %}
+                <li class="{{ category }}" style="color: {% if category == 'error' %}red{% else %}green{% endif %};">
+                  {{ message }}
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    </main>
+
+    <footer>
+        <p>&copy; Created by Cauê Pacheco Palma 2025</p>
+    </footer>
+    
+</body>
+</html>
